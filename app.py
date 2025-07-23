@@ -4,6 +4,20 @@ import pandas as pd
 import streamlit as st
 from podcast_utils import fetch_matching_episodes
 
+import streamlit as st
+st.set_page_config(page_title="PodPulse", page_icon="🎧", layout="centered")
+
+# Hide Streamlit menu, footer, and GitHub icon
+hide_menu_style = """
+    <style>
+    #MainMenu {visibility: hidden;}
+    footer {visibility: hidden;}
+    header {visibility: hidden;}
+    </style>
+"""
+st.markdown(hide_menu_style, unsafe_allow_html=True)
+
+
 def get_topic_counts(episodes, keyword):
     title_count = 0
     description_count = 0
